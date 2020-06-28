@@ -1,5 +1,6 @@
 // server.js
 // load the things we need
+const botToken = ""
 const fetch = require('node-fetch');
 const fs = require('fs')
 var express = require('express');
@@ -83,7 +84,7 @@ app.get('/get-ticket-info', (req,res)=>{
                 if(e.type != "member") return
                 fetch('https://discordapp.com/api/v6/users/'+e.id, {
                     method:'get',
-                    headers: {'Authorization': 'Bot NjY4OTg0NjA5NzUyNzQzOTQ2.Xvj50A.TNy49JeF4s5QWJg0VfGFthFQ8ws'}
+                    headers: {'Authorization': 'Bot '+botToken}
                 })
                 .then(res => res.json())
                 .then(b => { 

@@ -16,7 +16,7 @@
         <h2 id="assignedStaff">Assigned Staff Member:</h2>
         <br>
         <h1>User who created Ticket:</h1>
-        <h2><img id="userImg" width="64px" height="64px" style="display: inline-block; border-radius: 50%"><span>&nbsp;&nbsp;</span><span id="user"></span></h2>
+        <h2><img id="userImg" width="64px" height="64px" style="display: inline-block; border-radius: 50%" src="https://media1.tenor.com/images/54cc77830f82ef67471d8d868d09ad2f/tenor.gif?itemid=11230336"><span>&nbsp;&nbsp;</span><span id="user">Loading...</span></h2>
     </div>
 </main>
 
@@ -29,6 +29,10 @@
   bruh = bruh[1]
   $("#ticket-name").text("#"+bruh)
   $.get("/get-ticket-info?ticket="+bruh, a=>{
+    if(!a.userCreated) {
+      $("#userImg").remove();
+      $("#user").text('User who created ticket has gotten kicked/banned from the server!')
+    }
     $('#user').text(a.userCreated)
     document.getElementById('userImg').src = a.userImg;
     if (!a.assigned) {
