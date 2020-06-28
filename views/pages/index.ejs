@@ -104,7 +104,7 @@ function resetTimer(){
 		$('#copy').val(`(Time of info grabbed: ${formatted_date} UTC, All info is from the discord!) \n\nTickets unsolved: ${d.count}, Tickets not assigned to staff: ${d.ticketsUnassigned}, Tickets assigned to staff: ${d.ticketsAssigned}, thank you Lunar Client Staff, very cool!`)
 		d.tickets.forEach(e=>{
 			e.forEach(a=>{
-				$("#tickets").append("<a href='/ticket-info/"+a.name+"'><span>#"+a.name+"</span></a>"+(a.staffReplied ? '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff: <span style="background-color: #0f0; border-radius: 4px 4px 4px 4px">&nbsp;Yes&nbsp;</span></span>' : '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff: <span style="background-color: #f00; border-radius: 4px 4px 4px 4px">&nbsp;No&nbsp;</span></span>')+"<br><br>");
+				$("#tickets").append("<div style='box-shadow: 0 0 5px gray; width: 62%;'><a href='/ticket-info/"+a.name+"'><span>&nbsp;#"+a.name+"&nbsp;</span></a>"+(a.staffReplied ? '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff: <span style="background-color: #0f0; border-radius: 4px 4px 4px 4px">&nbsp;Yes&nbsp;</span></span></div>' : '<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staff: <span style="background-color: #f00; border-radius: 4px 4px 4px 4px">&nbsp;No&nbsp;</span></span></div>')+"<br>");
 			})
 		})
 	})
