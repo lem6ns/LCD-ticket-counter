@@ -1,6 +1,6 @@
 // server.js
 // load the things we need
-const botToken = ""
+const botToken = "";
 const fetch = require('node-fetch');
 const fs = require('fs')
 var express = require('express');
