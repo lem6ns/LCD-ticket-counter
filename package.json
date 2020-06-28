@@ -1,0 +1,17 @@
+{
+  "name": "lcdiscord-ticket-counter",
+  "version": "1.0.0",
+  "description": "See how slow the Lunar Client Staff are!",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lolwhenlifegivesyoulemons @ github",
+  "license": "MIT"
+}
