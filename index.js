@@ -79,7 +79,18 @@ app.get('/get-ticket-info', (req,res)=>{
     	json.forEach(a=>{
     		if(a.name != ticket) return
     		if(a.topic) {staff = true; staffMember = a.topic}
-    		res.json({staffAssigned:staffMember, assigned: staff})
+            a.permission_overwrites.forEach(e=>{
+                if(e.type != "member") return
+                fetch('https://discordapp.com/api/v6/users/'+e.id, {
+                    method:'get',
+                    headers: {'Authorization': 'Bot NjY4OTg0NjA5NzUyNzQzOTQ2.Xvj50A.TNy49JeF4s5QWJg0VfGFthFQ8ws'}
+                })
+                .then(res => res.json())
+                .then(b => { 
+                    if (b.avatar.includes('a_')) avatar = b.avatar+".gif"; else avatar = b.avatar+".png";
+                    res.json({staffAssigned:staffMember, assigned: staff, userCreated: b.username +"#"+ b.discriminator, userImg: `https://cdn.discordapp.com/avatars/${b.id}/${avatar}`})
+                })
+            })
     	})
     })
 })
