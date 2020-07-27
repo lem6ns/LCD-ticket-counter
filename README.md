@@ -1,6 +1,8 @@
 # LCD-token-counter
  Lunar Client Discord Token Counter
 
+damn you adam
+you cant get the person who is assigned to the ticket lol
 Installation:
 1. Install [node.js](https://node.js.org)
 2. Go to this directory in Terminal
